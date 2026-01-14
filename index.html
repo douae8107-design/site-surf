@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>École de Surf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🏄‍♂️ École de Surf "La Vague"</h1>
+        <p>Réservez votre cours de surf en ligne !</p>
+    </header>
+    <!-- Ajoute cette section APRÈS le <header> et AVANT <main> -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>🌊 Vivez l'expérience surf !</h2>
+        <p>Des vagues parfaites, des moniteurs certifiés</p>
+    </div>
+    <div class="hero-image">
+        <!-- Tu peux remplacer cette URL par une image locale -->
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+             alt="Surfeur sur une vague"
+             class="surf-image">
+        <p class="image-caption">© Photo de Unsplash</p>
+    </div>
+</section>
+
+    <main>
+        <!-- Formulaire de réservation -->
+        <section class="formulaire">
+            <h2>📅 Réserver un cours</h2>
+            <form id="formReservation">
+                <div class="input-group">
+                    <label for="nom">Votre nom :</label>
+                    <input type="text" id="nom" placeholder="Votre nom" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Votre email :</label>
+                    <input type="email" id="email" placeholder="email@exemple.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="cours">Type de cours :</label>
+                    <select id="cours" required>
+                        <option value="">-- Choisissez --</option>
+                        <option value="débutant">Débutant - 1000dh</option>
+                        <option value="intermédiaire">Intermédiaire - 1500dh</option>
+                        <option value="prive">Privé - 3000dh</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="date">Date du cours :</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="personnes">Nombre de personnes :</label>
+                    <input type="number" id="personnes" min="1" max="10" value="1" required>
+                </div>
+
+                <button type="button" onclick="validerReservation()">
+                    📝 Réserver maintenant
+                </button>
+            </form>
+        </section>
+
+        <!-- Message de confirmation -->
+        <section id="messageConfirmation" class="message-cache">
+            <div class="message-box">
+                <h3>✅ Réservation confirmée !</h3>
+                <p id="detailsReservation"></p>
+                <p id="prixTotal"></p>
+                <button onclick="fermerMessage()">Fermer</button>
+            </div>
+        </section>
+
+        <!-- Liste des réservations -->
+        <section class="reservations">
+            <h2>📋 Vos réservations</h2>
+            <div id="listeReservations">
+                <p>Aucune réservation pour le moment.</p>
+            </div>
+            <button onclick="afficherToutesReservations()">
+                Voir toutes les réservations
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 École de Surf "La Vague" - Tous droits réservés</p>
+    </footer>
+
+    <!-- Lien vers JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
